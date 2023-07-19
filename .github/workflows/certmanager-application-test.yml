@@ -244,7 +244,6 @@ jobs:
         sudo microk8s.kubectl create namespace ncm-issuer-auth
         sudo microk8s.kubectl create secret generic ncm-issuer -n ncm-issuer-auth --from-literal=username=$NCM_USER --from-literal=usrPassword=$NCM_PASSWORD
         sudo microk8s.kubectl create secret generic ncm-issuer-bundle -n ncm-issuer-auth --from-file=cacert=data/ca_bundle.pem
-        exit 1
       env:
         NCM_HOST: ${{ secrets.NCM_HOST }}
         NCM_USER: ${{ secrets.NCM_USER }}
